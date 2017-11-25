@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include <QMainWindow>
+#include <QMouseEvent>
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
 #include <QGraphicsView>
