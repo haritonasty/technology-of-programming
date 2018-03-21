@@ -1,6 +1,10 @@
 #include "circle.h"
 
-Circle::Circle(QObject *parent) : QObject(parent){
+Circle::Circle(QObject *parent){
+   radius = 0;
+   x = 0;
+   y = 0;
+   angel = 0;
    setFlag(QGraphicsItem::ItemIsMovable, true);
    setFlag(QGraphicsItem::ItemIsFocusable,true);
    setFlag(QGraphicsItem::ItemIsSelectable, true);

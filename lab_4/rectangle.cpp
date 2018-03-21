@@ -1,6 +1,11 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle(QObject *parent) : QObject(parent){
+Rectangle::Rectangle(QObject *parent){
+    height = 0;
+    width = 0;
+    x = 0;
+    y = 0;
+    angel = 0;
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsFocusable,true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);

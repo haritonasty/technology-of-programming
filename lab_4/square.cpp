@@ -1,6 +1,10 @@
 #include "square.h"
 
-Square::Square(QObject *parent) : QObject(parent){
+Square::Square(QObject *parent){
+    side = 0;
+    angel = 0;
+    x = 0;
+    y = 0;
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsFocusable,true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);

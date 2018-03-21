@@ -86,15 +86,13 @@ void MainWindow::pressedRectangle(){
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
     int x=event->pos().x(),y=event->pos().y();
-    if(x <= 586 && x >= 13 && y <= 535 && y >= 13)
-    {
+    if(x <= 586 && x >= 13 && y <= 535 && y >= 13){
         xCounter = x;
         yCounter = y+25;
         addFigure();
-
     }
 
-   }
+}
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
@@ -155,7 +153,6 @@ void MainWindow::addFigure()
 void MainWindow::save()
 {
     vector<Shape*> list=wrapper->getFigure();
-    wrapper->print();
     for (int i=0;i<list.size();i++)
     {
 
