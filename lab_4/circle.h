@@ -3,10 +3,11 @@
 #include "shape.h"
 
 
-class FIGURESHARED_EXPORT Circle : public Shape,public QObject{
+class FIGURESHARED_EXPORT Circle : public Shape, public QObject{
     float radius;
 public:
-    Circle(QObject *parent=0);
+    Circle(QObject *parent = 0);
+    ~Circle();
     string type();
     void print();
     vector<int> getAll();

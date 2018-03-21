@@ -2,8 +2,7 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent){
-
-
+        wrapper = new Container();
         activeCircle = false;
         activeRectangle = false;
         activeSquare = false;
@@ -148,28 +147,30 @@ void MainWindow::addFigure()
         curr->offsetTo(xCounter,yCounter);
         curr->setAll(Properties);
         scene->addItem(curr);
-        wrapper.addFigure(curr);
+        wrapper->addFigure(curr);
     }
 
 }
 
 void MainWindow::save()
 {
-    vector<Shape*> list=wrapper.getFigure();
+    vector<Shape*> list=wrapper->getFigure();
+    wrapper->print();
     for (int i=0;i<list.size();i++)
     {
+
         list.at(i)->changeAngel();
         QPointF curr=list.at(i)->pos();
         list.at(i)->offsetTo(curr.x(),curr.y());
     }
-    wrapper.save();
+    wrapper->save();
 }
 void MainWindow::load()
 {
-    vector<Shape*> list=wrapper.getFigure();
+    vector<Shape*> list=wrapper->getFigure();
     int i = list.size();
-    wrapper.load();
-    list = wrapper.getFigure();
+    wrapper->load();
+    list = wrapper->getFigure();
     for (; i<list.size(); i++)
     {
         vector<int> curr=list.at(i)->getAll();
@@ -180,10 +181,8 @@ void MainWindow::load()
 }
 
 
-
-
-
 MainWindow::~MainWindow(){
+    delete wrapper;
     delete scene;
     delete graphicsView;
 }

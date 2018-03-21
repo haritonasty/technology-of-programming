@@ -19,17 +19,6 @@ class MainWindow : public QWidget
     Q_OBJECT
 
 public:
-    Container wrapper;
-    bool activeCircle, activeRectangle, activeSquare;
-    int xCounter, yCounter;
-    QGraphicsScene *scene;
-    QGraphicsView * graphicsView;
-    QRadioButton *figure1, *figure2, *figure3;
-    QPushButton *buttonSave, *buttonOpen;
-    QLineEdit *size1, *size2;
-    QHBoxLayout *figures, *sizes,*blockActions;
-    QVBoxLayout *blockFigures,*layout;
-    QGroupBox *groupButtons,*objFigures,*groupSizes,*groupFigures;
     void pressedCircle();
     void pressedSquare();
     void pressedRectangle();
@@ -40,6 +29,18 @@ public:
     void mousePressEvent(QMouseEvent *event);
     void keyPressEvent(QKeyEvent *event);
     ~MainWindow();
+private:
+    Container *wrapper;
+    bool activeCircle, activeRectangle, activeSquare;
+    int xCounter, yCounter;
+    QGraphicsScene *scene;
+    QGraphicsView * graphicsView;
+    QRadioButton *figure1, *figure2, *figure3;
+    QPushButton *buttonSave, *buttonOpen;
+    QLineEdit *size1, *size2;
+    QHBoxLayout *figures, *sizes,*blockActions;
+    QVBoxLayout *blockFigures,*layout;
+    QGroupBox *groupButtons,*objFigures,*groupSizes,*groupFigures;
 };
 
 #endif // MAINWINDOW_H
